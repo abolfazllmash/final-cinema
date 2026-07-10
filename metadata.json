@@ -1,6 +1,0 @@
-{
-  "name": "فیلم‌بازی",
-  "description": "فیلم‌بازی: آرشیو فیلم‌های برتر جهان به صورت آفلاین و سریع.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
