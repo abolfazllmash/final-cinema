@@ -27,11 +27,14 @@ android {
 
   signingConfigs {
     create("release") {
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
-      storeFile = file(keystorePath)
-      storePassword = System.getenv("STORE_PASSWORD")
-      keyAlias = "upload"
-      keyPassword = System.getenv("KEY_PASSWORD")
+      val ksPath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/cinema-release.keystore"
+      val ksFile = file(ksPath)
+      if (ksFile.exists()) {
+        storeFile = ksFile
+        storePassword = System.getenv("KEYSTORE_PASSWORD")
+        keyAlias = System.getenv("KEY_ALIAS") ?: "cinema"
+        keyPassword = System.getenv("KEY_PASSWORD")
+      }
     }
     create("debugConfig") {
       storeFile = file("${rootDir}/debug.keystore")
@@ -162,4 +165,3 @@ tasks.named("preBuild") {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     dependsOn("downloadFont")
 }
-
