@@ -1,0 +1,31 @@
+# Gradle / build
+.gradle/
+build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Local config & secrets (CI می‌سازدشان)
+local.properties
+local.defaults.properties
+secrets.properties
+.env
+.env.example
+
+# Signing
+*.keystore
+*.jks
+
+# Outputs
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
